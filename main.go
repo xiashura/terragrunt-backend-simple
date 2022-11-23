@@ -16,5 +16,5 @@ func main() {
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, fmt.Sprintf("stage %s", v.GetString("ENV")))
 	})
-	e.Logger.Fatal(e.Start(":1323"))
+	e.Logger.Fatal(e.Start(fmt.Sprintf(":%s", v.GetString("PORT"))))
 }
