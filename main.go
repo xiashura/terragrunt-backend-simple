@@ -12,6 +12,8 @@ func main() {
 	v := viper.New()
 	v.AutomaticEnv()
 
+
+	
 	e := echo.New()
 	e.GET("/", func(c echo.Context) error {
 		return c.String(http.StatusOK, fmt.Sprintf("stage %s", v.GetString("ENV")))

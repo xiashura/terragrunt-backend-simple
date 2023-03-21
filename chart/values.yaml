@@ -1,0 +1,5 @@
+namespace: "example"
+name: "simple-backend"
+image: "nginx"
+env:
+  name: "dev"

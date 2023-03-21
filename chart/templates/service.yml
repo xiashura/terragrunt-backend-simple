@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name:  {{ printf "service-%s" .Values.name }}
+  namespace: {{ .Values.namespace }}
+spec:
+  selector:
+    app: {{.Values.name}}
+  ports:
+  - name: {{ printf "service-%s" .Values.name }}
+    protocol: TCP
+    port: {{ .Values.env.port | default 80 }}
+    targetPort: 8080 
